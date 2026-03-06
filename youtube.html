@@ -70,6 +70,32 @@
         }
         h1 { font-size: 18px; }
         p { font-size: 10px; }
+        .video-box {
+            background: #f2ed88;
+            color: #009e67;
+            padding: 15px;
+            margin-top: 20px;
+            border: 2px inset #ffffff;
+            text-align: left;
+        }
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border: 2px solid #000;
+            margin-top: 10px;
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .highlight {
+            color: #a84032;
+        }
         .btn {
             display: inline-block;
             background-color: #c0c0c0;
@@ -96,7 +122,7 @@
 
 <div class="window">
     <div class="title-bar">
-        <span>YouTube</span>
+        <span>MadSandGames_YouTube</span>
         <div class="title-bar-controls">
             <div class="title-bar-btn"></div>
             <div class="title-bar-btn"></div>
@@ -113,8 +139,24 @@
         </nav>
 
         <h1>YouTube Channel</h1>
-        <p>Check out devlogs and trailers for MadSandGames projects.</p>
-        <a href="https://www.youtube.com/@MadSandGames" target="_blank" class="btn">Visit MadSandGames on YouTube</a>
+        <p>Stay updated with the latest devlogs and project trailers.</p>
+
+        <div class="video-box">
+            <p><span class="highlight">[</span>Latest Upload<span class="highlight">]</span></p>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed?listType=user_uploads&user=MadSandGames" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+            <p style="margin-top:10px; text-align:center;">
+                <span class="highlight">&lt;--</span> Click to play newest video <span class="highlight">--&gt;</span>
+            </p>
+        </div>
+
+        <a href="https://www.youtube.com/@MadSandGames" target="_blank" class="btn">Visit MadSandGames Channel</a>
     </div>
 </div>
 
