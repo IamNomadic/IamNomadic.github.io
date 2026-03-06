@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MadSandGames | The Desert</title>
+    <title>MadSandGames | Minecraft</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
@@ -70,7 +70,7 @@
         p, li { font-size: 10px; }
         .server-box {
             background: #f2ed88;
-            color: #00ffbb;
+            color: #009e67;
             padding: 15px;
             margin-top: 20px;
             border: 2px inset #ffffff;
@@ -81,6 +81,34 @@
         .server-box ul {
             list-style-type: square;
             padding-left: 20px;
+        }
+        .highlight {
+            color: #a84032;
+        }
+        .btn {
+            display: inline-block;
+            background-color: #c0c0c0;
+            color: #000000;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            padding: 10px 15px;
+            text-decoration: none;
+            margin-top: 20px;
+            font-size: 10px;
+            text-align: center;
+        }
+        .btn:active {
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            background-color: #f2ed88;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -107,21 +135,25 @@
         <p>Welcome to The Desert!</p>
 
         <div class="server-box">
-            <p>> Server IP: play.thedesert.ca</p>
-            <p>> Status: Whitelist Only</p>
+            <p>> <span class="highlight">Server IP:</span> play.thedesert.ca</p>
+            <p>> <span class="highlight">Status:</span> Whitelist Only</p>
             <br>
-            <p>> How to join:</p>
+            <p>> <span class="highlight">How to join:</span></p>
             <p>> 1. You must join the Discord.</p>
-            <p>> 2. Send !whitelist {Username} in #whitelist-apply</p>
+            <p>> 2. Send !whitelist <span class="highlight">{</span>Username<span class="highlight">}</span> in #whitelist-apply</p>
             <br>
-            <p>> Current Gamemodes:</p>
+            <p>> <span class="highlight">Current Gamemodes:</span></p>
             <ul>
                 <li>Survival</li>
                 <li>Parkour</li>
-                <li>SkyBlock &lt;-- Ask for your own world in #skyblock-application</li>
+                <li>SkyBlock <span class="highlight">&lt;--</span> Ask for your own world in #skyblock-application</li>
             </ul>
             <br>
             <p>> Always taking suggestions!</p>
+        </div>
+
+        <div class="button-group">
+            <a href="https://discord.gg/mkCwxn9dcK" target="_blank" class="btn">Join Discord to Whitelist</a>
         </div>
     </div>
 </div>
