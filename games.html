@@ -29,6 +29,27 @@
             padding: 20px;
             text-align: center;
         }
+        .game-section {
+            background: #2a2a2a;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        .game-section h2 {
+            color: #e67e22;
+            margin-top: 0;
+        }
+        .game-section img {
+            max-width: 100%;
+            height: auto;
+            margin: 15px 0;
+            border-radius: 5px;
+            display: block;
+        }
+        ul {
+            padding-left: 20px;
+        }
         a.back-link { 
             color: #e67e22; 
             text-decoration: none; 
@@ -48,9 +69,26 @@
 
 <div class="container">
     <h1>My Games</h1>
-    <p>Details about your current and past projects will go here.</p>
-    <img src="screenshot.png" alt="Game Screenshot" style="max-width:100%; height:auto;">
-    <br>
+    
+    <div class="game-section">
+        <img src="WellboundTitle.png" alt="Wellbound Title">
+        
+        <h2>WellBound</h2>
+        <p>WellBound is a game with a randomly generated level every time you play it[cite: 19]. The player wakes up in a strange grassy world surrounded by wilderness on all sides[cite: 19]. The wilderness is full of strange creatures that try to stop you the closer you get to escaping[cite: 19]. The player must learn to survive to escape or solve the final puzzle[cite: 19].</p>
+        
+        <h3>Gameplay & Features</h3>
+        <ul>
+            <li><strong>World Generation:</strong> The world is randomly generated at the start of each run with three biomes: the desert, the swamp, and the forest, generated with Perlin noise[cite: 19].</li>
+            <li><strong>Difficulty System:</strong> The difficulty is constantly increasing in the background, making enemies gain more base speed, damage, sprint speed, sprint duration, and detection range[cite: 19].</li>
+            <li><strong>Crafting System:</strong> All recipes are made by combining one item with another to create stamina food, effect items, or traps[cite: 19].</li>
+            <li><strong>Ritual System:</strong> The player must complete several different rituals, such as the sacrifice ritual, resource ritual, and sacred item ritual, to escape[cite: 19].</li>
+            <li><strong>Enemies:</strong> The world contains enemies like frogs in the swamp, bunnies and snails in the forest, and crabs in the desert[cite: 19].</li>
+        </ul>
+        
+        <img src="TheWellActivated.png" alt="The Well Activated">
+        <img src="Crab.gif" alt="Crab Enemy Animation">
+    </div>
+
     <a href="index.html" class="back-link">Back to Home</a>
 </div>
 
