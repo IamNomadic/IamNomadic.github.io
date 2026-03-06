@@ -8,118 +8,156 @@
     <style>
         body {
             font-family: 'Press Start 2P', cursive;
-            background-color: #000000;
-            color: #39ff14;
-            line-height: 1.8;
+            background-color: #008080;
+            color: #000000;
+            line-height: 1.6;
             margin: 0;
             padding: 20px;
         }
-        header {
-            background: #111;
-            border: 4px solid #39ff14;
-            padding: 15px;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-        nav a {
-            color: #00ffff;
-            margin: 0 15px;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-size: 14px;
-        }
-        nav a:hover {
-            color: #ff00ff;
-        }
-        .container {
+        .window {
             max-width: 800px;
             margin: 0 auto;
-            border: 4px solid #39ff14;
-            background-color: #111;
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            padding: 2px;
+        }
+        .title-bar {
+            background-color: #000080;
+            color: #ffffff;
+            padding: 5px 10px;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .title-bar-controls {
+            display: flex;
+            gap: 2px;
+        }
+        .title-bar-btn {
+            background: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            width: 16px;
+            height: 16px;
+        }
+        .content {
             padding: 20px;
         }
-        h1, h2, h3 {
-            color: #ff9900;
-            text-align: center;
+        nav {
+            margin-bottom: 20px;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            padding: 10px;
         }
-        h1 { font-size: 20px; }
-        h2 { font-size: 16px; margin-top: 30px; border-bottom: 2px solid #ff9900; padding-bottom: 10px; }
-        h3 { font-size: 12px; color: #00ffff; text-align: left; }
-        p, li {
+        nav a {
+            color: #000000;
+            margin-right: 15px;
+            text-decoration: none;
             font-size: 12px;
         }
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
+        nav a:hover {
+            color: #00ffbb;
+        }
+        h1 { font-size: 18px; text-align: center; }
+        h2 { font-size: 14px; margin-top: 30px; }
+        h3 { font-size: 12px; }
+        p, li { font-size: 10px; }
+        ul { list-style-type: square; padding-left: 20px; }
+        .btn {
+            display: block;
+            width: fit-content;
+            margin: 20px auto;
+            background-color: #c0c0c0;
+            color: #000000;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-size: 10px;
+            text-align: center;
+        }
+        .btn:active {
+            border-top: 2px solid #000000;
+            border-left: 2px solid #000000;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            background-color: #f2ed88;
         }
         img {
             max-width: 100%;
             height: auto;
             image-rendering: pixelated;
-            border: 2px solid #ff9900;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
             margin: 15px auto;
             display: block;
         }
-        .btn {
-            display: block;
-            width: fit-content;
-            margin: 20px auto;
-            background: #000;
-            color: #00ffff;
-            border: 2px solid #00ffff;
-            padding: 10px 15px;
+        a.back-link {
+            color: #000080;
             text-decoration: none;
-            font-size: 12px;
-            text-align: center;
-        }
-        .btn:hover {
-            background: #00ffff;
-            color: #000;
-        }
-        a.back-link { 
-            color: #ff00ff; 
-            text-decoration: none; 
             display: inline-block;
             margin-top: 20px;
-            font-size: 12px;
+            font-size: 10px;
         }
         a.back-link:hover {
-            color: #00ffff;
+            background-color: #00ffbb;
+            color: #000;
         }
     </style>
 </head>
 <body>
 
-<header>
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="games.html">Games</a>
-    </nav>
-</header>
+<div class="window">
+    <div class="title-bar">
+        <span>Games.exe</span>
+        <div class="title-bar-controls">
+            <div class="title-bar-btn"></div>
+            <div class="title-bar-btn"></div>
+            <div class="title-bar-btn"></div>
+        </div>
+    </div>
 
-<div class="container">
-    <h1>My Games</h1>
-    
-    <img src="WellboundTitle.png" alt="Wellbound Title">
-    
-    <h2>WellBound</h2>
-    <p>WellBound is a game with a randomly generated level every time you play it. The player wakes up in a strange grassy world surrounded by wilderness on all sides. The wilderness is full of strange creatures that try to stop you the closer you get to escaping. The player must learn to survive to escape or solve the final puzzle.</p>
-    
-    <h3>Gameplay & Features</h3>
-    <ul>
-        <li><strong>World Generation:</strong> The world is randomly generated at the start of each run with three biomes: the desert, the swamp, and the forest, generated with Perlin noise.</li>
-        <li><strong>Difficulty System:</strong> The difficulty is constantly increasing in the background, making enemies gain more base speed, damage, sprint speed, sprint duration, and detection range.</li>
-        <li><strong>Crafting System:</strong> All recipes are made by combining one item with another to create stamina food, effect items, or traps.</li>
-        <li><strong>Ritual System:</strong> The player must complete several different rituals, such as the sacrifice ritual, resource ritual, and sacred item ritual, to escape.</li>
-        <li><strong>Enemies:</strong> The world contains enemies like frogs in the swamp, bunnies and snails in the forest, and crabs in the desert.</li>
-    </ul>
-    
-    <img src="TheWellActivated.png" alt="The Well Activated">
-    <img src="Crab.gif" alt="Crab Enemy Animation">
+    <div class="content">
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="games.html">Games</a>
+        </nav>
 
-    <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
+        <h1>My Games</h1>
+        
+        <img src="WellboundTitle.png" alt="Wellbound Title">
+        
+        <h2>WellBound</h2>
+        <p>WellBound is a game with a randomly generated level every time you play it. The player wakes up in a strange grassy world surrounded by wilderness on all sides. The wilderness is full of strange creatures that try to stop you the closer you get to escaping. The player must learn to survive to escape or solve the final puzzle.</p>
+        
+        <h3>Gameplay & Features</h3>
+        <ul>
+            <li><strong>World Generation:</strong> The world is randomly generated at the start of each run with three biomes: the desert, the swamp, and the forest, generated with Perlin noise.</li>
+            <li><strong>Difficulty System:</strong> The difficulty is constantly increasing in the background, making enemies gain more base speed, damage, sprint speed, sprint duration, and detection range.</li>
+            <li><strong>Crafting System:</strong> All recipes are made by combining one item with another to create stamina food, effect items, or traps.</li>
+            <li><strong>Ritual System:</strong> The player must complete several different rituals, such as the sacrifice ritual, resource ritual, and sacred item ritual, to escape.</li>
+            <li><strong>Enemies:</strong> The world contains enemies like frogs in the swamp, bunnies and snails in the forest, and crabs in the desert.</li>
+        </ul>
+        
+        <img src="TheWellActivated.png" alt="The Well Activated">
+        <img src="Crab.gif" alt="Crab Enemy Animation">
 
-    <a href="index.html" class="back-link">&lt; Back to Home</a>
+        <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
+
+        <a href="index.html" class="back-link">&lt; Back to Home</a>
+    </div>
 </div>
 
 </body>
