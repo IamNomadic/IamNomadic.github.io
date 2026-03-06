@@ -6,56 +6,69 @@
     <title>The Desert | Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
-        body { 
+        body {
             font-family: 'Press Start 2P', cursive;
-            background: #1a1a1a; 
-            color: #f4f4f4; 
+            background-color: #000000;
+            color: #39ff14;
+            line-height: 1.8;
             margin: 0;
-            line-height: 1.6;
+            padding: 20px;
         }
         header {
-            background: #333;
-            padding: 1rem;
+            background: #111;
+            border: 4px solid #39ff14;
+            padding: 15px;
             text-align: center;
+            margin-bottom: 20px;
         }
         nav a {
-            color: #fff;
+            color: #00ffff;
             margin: 0 15px;
             text-decoration: none;
-            font-weight: bold;
+            text-transform: uppercase;
+            font-size: 14px;
+        }
+        nav a:hover {
+            color: #ff00ff;
         }
         .container {
-            max-width: 900px;
-            margin: 50px auto;
+            max-width: 800px;
+            margin: 0 auto;
+            border: 4px solid #39ff14;
+            background-color: #111;
             padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #ff9900;
             text-align: center;
         }
-        .game-section {
-            background: #2a2a2a;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            text-align: left;
-        }
-        .game-section h2 {
-            color: #e67e22;
-            margin-top: 0;
-        }
-        .game-section img {
-            max-width: 100%;
-            height: auto;
-            margin: 15px 0;
-            border-radius: 5px;
-            display: block;
+        h1 { font-size: 20px; }
+        h2 { font-size: 16px; margin-top: 30px; border-bottom: 2px solid #ff9900; padding-bottom: 10px; }
+        h3 { font-size: 12px; color: #00ffff; text-align: left; }
+        p, li {
+            font-size: 12px;
         }
         ul {
+            list-style-type: square;
             padding-left: 20px;
         }
+        img {
+            max-width: 100%;
+            height: auto;
+            image-rendering: pixelated;
+            border: 2px solid #ff9900;
+            margin: 15px auto;
+            display: block;
+        }
         a.back-link { 
-            color: #e67e22; 
+            color: #ff00ff; 
             text-decoration: none; 
             display: inline-block;
             margin-top: 20px;
+            font-size: 12px;
+        }
+        a.back-link:hover {
+            color: #00ffff;
         }
     </style>
 </head>
@@ -71,26 +84,24 @@
 <div class="container">
     <h1>My Games</h1>
     
-    <div class="game-section">
-        <img src="WellboundTitle.png" alt="Wellbound Title">
-        
-        <h2>WellBound</h2>
-        <p>WellBound is a game with a randomly generated level every time you play it. The player wakes up in a strange grassy world surrounded by wilderness on all sides. The wilderness is full of strange creatures that try to stop you the closer you get to escaping. The player must learn to survive to escape or solve the final puzzle.</p>
-        
-        <h3>Gameplay & Features</h3>
-        <ul>
-            <li><strong>World Generation:</strong> The world is randomly generated at the start of each run with three biomes: the desert, the swamp, and the forest, generated with Perlin noise.</li>
-            <li><strong>Difficulty System:</strong> The difficulty is constantly increasing in the background, making enemies gain more base speed, damage, sprint speed, sprint duration, and detection range.</li>
-            <li><strong>Crafting System:</strong> All recipes are made by combining one item with another to create stamina food, effect items, or traps.</li>
-            <li><strong>Ritual System:</strong> The player must complete several different rituals, such as the sacrifice ritual, resource ritual, and sacred item ritual, to escape.</li>
-            <li><strong>Enemies:</strong> The world contains enemies like frogs in the swamp, bunnies and snails in the forest, and crabs in the desert.</li>
-        </ul>
-        
-        <img src="TheWellActivated.png" alt="The Well Activated">
-        <img src="Crab.gif" alt="Crab Enemy Animation">
-    </div>
+    <img src="WellboundTitle.png" alt="Wellbound Title">
+    
+    <h2>WellBound</h2>
+    <p>WellBound is a game with a randomly generated level every time you play it. The player wakes up in a strange grassy world surrounded by wilderness on all sides. The wilderness is full of strange creatures that try to stop you the closer you get to escaping. The player must learn to survive to escape or solve the final puzzle.</p>
+    
+    <h3>Gameplay & Features</h3>
+    <ul>
+        <li><strong>World Generation:</strong> The world is randomly generated at the start of each run with three biomes: the desert, the swamp, and the forest, generated with Perlin noise.</li>
+        <li><strong>Difficulty System:</strong> The difficulty is constantly increasing in the background, making enemies gain more base speed, damage, sprint speed, sprint duration, and detection range.</li>
+        <li><strong>Crafting System:</strong> All recipes are made by combining one item with another to create stamina food, effect items, or traps.</li>
+        <li><strong>Ritual System:</strong> The player must complete several different rituals, such as the sacrifice ritual, resource ritual, and sacred item ritual, to escape.</li>
+        <li><strong>Enemies:</strong> The world contains enemies like frogs in the swamp, bunnies and snails in the forest, and crabs in the desert.</li>
+    </ul>
+    
+    <img src="TheWellActivated.png" alt="The Well Activated">
+    <img src="Crab.gif" alt="Crab Enemy Animation">
 
-    <a href="index.html" class="back-link">Back to Home</a>
+    <a href="index.html" class="back-link">&lt; Back to Home</a>
 </div>
 
 </body>
