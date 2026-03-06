@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Desert | Games</title>
+    <title>MadSandGames | Games</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
@@ -72,9 +72,7 @@
         p, li { font-size: 10px; }
         ul { list-style-type: square; padding-left: 20px; }
         .btn {
-            display: block;
-            width: fit-content;
-            margin: 20px auto;
+            display: inline-block;
             background-color: #c0c0c0;
             color: #000000;
             border-top: 2px solid #ffffff;
@@ -103,6 +101,13 @@
             border-bottom: 2px solid #ffffff;
             margin: 15px auto;
             display: block;
+        }
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button-group .btn {
+            margin: 0 5px;
         }
         a.back-link {
             color: #000080;
@@ -133,6 +138,7 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="games.html">Games</a>
+            <a href="minecraft.html">The Desert</a>
         </nav>
 
         <h1>My Games</h1>
@@ -154,7 +160,10 @@
         <img src="TheWellActivated.png" alt="The Well Activated">
         <img src="Crab.gif" alt="Crab Enemy Animation">
 
-        <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
+        <div class="button-group">
+            <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
+            <a href="https://discord.gg/mkCwxn9dcK" target="_blank" class="btn">Join Discord</a>
+        </div>
 
         <a href="index.html" class="back-link">&lt; Back to Home</a>
     </div>
