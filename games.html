@@ -71,6 +71,25 @@
         h3 { font-size: 12px; }
         p, li { font-size: 10px; }
         ul { list-style-type: square; padding-left: 20px; }
+        
+        /* Commit Log Styling */
+        .commit-box {
+            background: #f2ed88;
+            color: #009e67;
+            padding: 15px;
+            margin-top: 20px;
+            border: 2px inset #ffffff;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .commit-entry {
+            margin-bottom: 10px;
+            border-bottom: 1px dashed #a84032;
+            padding-bottom: 5px;
+        }
+        .commit-date { color: #a84032; font-size: 8px; }
+        .commit-msg { display: block; margin-top: 4px; font-size: 9px; }
+
         .btn {
             display: inline-block;
             background-color: #c0c0c0;
@@ -116,10 +135,6 @@
             margin-top: 20px;
             font-size: 10px;
         }
-        a.back-link:hover {
-            background-color: #00ffbb;
-            color: #000;
-        }
     </style>
 </head>
 <body>
@@ -147,19 +162,12 @@
         <img src="WellboundTitle.png" alt="Wellbound Title">
         
         <h2>WellBound</h2>
-        <p>WellBound is a game with a randomly generated level every time you play it. The player wakes up in a strange grassy world surrounded by wilderness on all sides. The wilderness is full of strange creatures that try to stop you the closer you get to escaping. The player must learn to survive to escape or solve the final puzzle.</p>
+        <p>WellBound is a game with a randomly generated level every time you play it. The player must learn to survive to escape or solve the final puzzle.</p>
         
-        <h3>Gameplay & Features</h3>
-        <ul>
-            <li><strong>World Generation:</strong> The world is randomly generated at the start of each run with three biomes: the desert, the swamp, and the forest, generated with Perlin noise.</li>
-            <li><strong>Difficulty System:</strong> The difficulty is constantly increasing in the background, making enemies gain more base speed, damage, sprint speed, sprint duration, and detection range.</li>
-            <li><strong>Crafting System:</strong> All recipes are made by combining one item with another to create stamina food, effect items, or traps.</li>
-            <li><strong>Ritual System:</strong> The player must complete several different rituals, such as the sacrifice ritual, resource ritual, and sacred item ritual, to escape.</li>
-            <li><strong>Enemies:</strong> The world contains enemies like frogs in the swamp, bunnies and snails in the forest, and crabs in the desert.</li>
-        </ul>
-        
-        <img src="TheWellActivated.png" alt="The Well Activated">
-        <img src="Crab.gif" alt="Crab Enemy Animation">
+        <h3>Development Log (Latest Commits)</h3>
+        <div class="commit-box" id="commit-log">
+            Loading system updates...
+        </div>
 
         <div class="button-group">
             <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
@@ -169,6 +177,42 @@
         <a href="index.html" class="back-link">&lt; Back to Home</a>
     </div>
 </div>
+
+<script>
+    async function fetchCommits() {
+        const username = 'IamNomadic';
+        const repo = 'WellBound';
+        const container = document.getElementById('commit-log');
+
+        try {
+            const response = await fetch(`https://api.github.com/repos/${username}/${repo}/commits?per_page=5`);
+            const data = await response.json();
+
+            if (!Array.isArray(data)) {
+                throw new Error('Data is not an array');
+            }
+
+            container.innerHTML = ''; // Clear loading text
+
+            data.forEach(commit => {
+                const date = new Date(commit.commit.author.date).toLocaleDateString();
+                const message = commit.commit.message;
+                
+                const entry = document.createElement('div');
+                entry.className = 'commit-entry';
+                entry.innerHTML = `
+                    <span class="commit-date">[${date}]</span>
+                    <span class="commit-msg">> ${message}</span>
+                `;
+                container.appendChild(entry);
+            });
+        } catch (error) {
+            container.innerHTML = 'Error loading commit activity. Ensure repository is public.';
+        }
+    }
+
+    fetchCommits();
+</script>
 
 </body>
 </html>
