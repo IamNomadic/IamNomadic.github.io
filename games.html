@@ -68,7 +68,7 @@
         }
         h1 { font-size: 18px; text-align: center; }
         h2 { font-size: 14px; margin-top: 30px; }
-        h3 { font-size: 12px; }
+        h3 { font-size: 12px; margin-top: 20px; }
         p, li { font-size: 10px; }
         ul { list-style-type: square; padding-left: 20px; }
         
@@ -77,9 +77,9 @@
             background: #f2ed88;
             color: #009e67;
             padding: 15px;
-            margin-top: 20px;
+            margin-top: 10px;
             border: 2px inset #ffffff;
-            max-height: 300px;
+            max-height: 250px;
             overflow-y: auto;
         }
         .commit-entry {
@@ -135,6 +135,13 @@
             margin-top: 20px;
             font-size: 10px;
         }
+        a.back-link:hover {
+            background-color: #00ffbb;
+            color: #000;
+        }
+        .highlight {
+            color: #a84032;
+        }
     </style>
 </head>
 <body>
@@ -162,12 +169,22 @@
         <img src="WellboundTitle.png" alt="Wellbound Title">
         
         <h2>WellBound</h2>
-        <p>WellBound is a game with a randomly generated level every time you play it. The player must learn to survive to escape or solve the final puzzle.</p>
+        <p>WellBound is a game with a randomly generated level every time you play it. The player wakes up in a strange grassy world surrounded by wilderness on all sides. The player must learn to survive to escape or solve the final puzzle.</p>
         
-        <h3>Development Log (Latest Commits)</h3>
+        <h3><span class="highlight">[</span>Development Log<span class="highlight">]</span></h3>
         <div class="commit-box" id="commit-log">
-            Loading system updates...
+            Initializing system... Checking for updates...
         </div>
+
+        <h3>Gameplay & Features</h3>
+        <ul>
+            <li><strong>World Generation:</strong> Three biomes: desert, swamp, forest, generated with Perlin noise.</li>
+            <li><strong>Difficulty System:</strong> Enemies gain speed, damage, and range over time.</li>
+            <li><strong>Crafting System:</strong> Combine items to create stamina food, effects, or traps.</li>
+            <li><strong>Ritual System:</strong> Complete sacrifice, resource, and sacred item rituals to escape.</li>
+        </ul>
+        
+        <img src="TheWellActivated.png" alt="The Well Activated">
 
         <div class="button-group">
             <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
@@ -180,34 +197,31 @@
 
 <script>
     async function fetchCommits() {
-        const username = 'IamNomadic';
-        const repo = 'WellBound';
         const container = document.getElementById('commit-log');
 
         try {
-            const response = await fetch(`https://api.github.com/repos/${username}/${repo}/commits?per_page=5`);
+            // Fetch the commits.json file created by your GitHub Action
+            const response = await fetch('commits.json');
+            
+            if (!response.ok) {
+                throw new Error('File not found');
+            }
+            
             const data = await response.json();
 
-            if (!Array.isArray(data)) {
-                throw new Error('Data is not an array');
-            }
-
-            container.innerHTML = ''; // Clear loading text
+            container.innerHTML = ''; // Clear status message
 
             data.forEach(commit => {
-                const date = new Date(commit.commit.author.date).toLocaleDateString();
-                const message = commit.commit.message;
-                
                 const entry = document.createElement('div');
                 entry.className = 'commit-entry';
                 entry.innerHTML = `
-                    <span class="commit-date">[${date}]</span>
-                    <span class="commit-msg">> ${message}</span>
+                    <span class="commit-date">[${commit.date}]</span>
+                    <span class="commit-msg">> ${commit.message}</span>
                 `;
                 container.appendChild(entry);
             });
         } catch (error) {
-            container.innerHTML = 'Error loading commit activity. Ensure repository is public.';
+            container.innerHTML = 'Error: Cannot sync with private repository.<br><br>Check if "commits.json" has been generated in your root folder.';
         }
     }
 
