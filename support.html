@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MadSandGames | Games</title>
+    <title>MadSandGames | Support</title>
     <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
     <style>
         body {
@@ -20,13 +20,13 @@
             overflow-x: hidden;
         }
 
-        @keyframes panStars {
+        @keyframes panStarsDiagonal {
             from {
                 background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
             }
 
             to {
-                background-position: 400px 0, 240px 60px, 430px 270px, 220px 100px;
+                background-position: 400px 400px, 240px 260px, 430px 570px, 220px 300px;
             }
         }
 
@@ -60,16 +60,6 @@
             }
         }
 
-        @keyframes floatFast {
-            0%, 100% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-20px);
-            }
-        }
-
         .sky-texture {
             position: fixed;
             top: 0;
@@ -82,7 +72,7 @@
             opacity: 0.6;
             z-index: -3;
             pointer-events: none;
-            animation: panStars 120s linear infinite; /* Slower pan */
+            animation: panStarsDiagonal 150s linear infinite;
         }
 
         .moon {
@@ -100,7 +90,7 @@
             mask-image: repeating-linear-gradient(to bottom, black 0px, black 16px, transparent 16px, transparent 20px);
         }
 
-        /* Custom Planets for Games Page */
+        /* Custom Support Page Planets */
         .planet {
             position: fixed;
             border-radius: 50%;
@@ -108,33 +98,23 @@
         }
 
         .planet-1 {
-            top: 10%;
-            right: 10%;
-            width: 150px;
-            height: 150px;
-            background: linear-gradient(135deg, #ff0844 0%, #ffb199 100%);
-            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5), 0 0 20px rgba(255, 8, 68, 0.4);
+            top: 12%;
+            right: 15%;
+            width: 140px;
+            height: 140px;
+            background: linear-gradient(135deg, #f6d365 0%, #ffb199 100%);
+            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5), 0 0 20px rgba(246, 211, 101, 0.4);
             animation: floatSlow 7s ease-in-out infinite;
         }
 
         .planet-2 {
-            top: 30%;
-            left: 20%;
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
-            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.5);
-            animation: floatFast 4s ease-in-out infinite;
-        }
-
-        .planet-3 {
-            top: 20%;
-            left: 40%;
-            width: 90px;
-            height: 90px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5);
-            animation: floatMedium 9s ease-in-out infinite;
+            top: 35%;
+            left: 15%;
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #00c6fb 0%, #005bea 100%);
+            box-shadow: inset -5px -5px 15px rgba(0,0,0,0.5);
+            animation: floatMedium 5s ease-in-out infinite;
         }
 
         .grid-wrapper {
@@ -212,6 +192,7 @@
             border-right: 2px solid #ffffff;
             border-bottom: 2px solid #ffffff;
             padding: 10px;
+            text-align: left;
         }
 
             nav a {
@@ -235,46 +216,25 @@
             margin-top: 30px;
         }
 
-        h3 {
-            font-size: 12px;
-            margin-top: 20px;
-        }
-
         p, li {
             font-size: 10px;
         }
 
-        ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
-
-        .commit-box {
+        .support-box {
             background: #008080;
-            color: #ffb3ff;
+            color: #ffffff;
             padding: 15px;
-            margin-top: 10px;
+            margin-top: 20px;
             border: 2px inset #ffffff;
-            max-height: 250px;
-            overflow-y: auto;
         }
 
-        .commit-entry {
-            margin-bottom: 10px;
-            border-bottom: 1px dashed #000000;
-            padding-bottom: 5px;
-        }
-
-        .commit-date {
-            color: #000000;
-            font-size: 8px;
-        }
-
-        .commit-msg {
-            display: block;
-            margin-top: 4px;
-            font-size: 9px;
-        }
+            .support-box h3 {
+                font-size: 12px;
+                color: #00ffff;
+                margin-top: 0;
+                border-bottom: 1px dashed #00ffff;
+                padding-bottom: 5px;
+            }
 
         .btn {
             display: inline-block;
@@ -286,6 +246,7 @@
             border-bottom: 2px solid #000000;
             padding: 10px 15px;
             text-decoration: none;
+            margin-top: 10px;
             font-size: 10px;
             text-align: center;
         }
@@ -306,9 +267,10 @@
             border-left: 2px solid #808080;
             border-right: 2px solid #ffffff;
             border-bottom: 2px solid #ffffff;
-            margin: 15px auto;
+            margin: 10px auto;
             display: block;
             background-color: #000000;
+            cursor: pointer;
         }
 
         .button-group {
@@ -319,23 +281,6 @@
             .button-group .btn {
                 margin: 0 5px;
             }
-
-        a.back-link {
-            color: #000080;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            font-size: 10px;
-        }
-
-            a.back-link:hover {
-                background-color: #00ffbb;
-                color: #000;
-            }
-
-        .highlight {
-            color: #000000;
-        }
 
         /* Modal Styles */
         .modal {
@@ -375,7 +320,6 @@
     <div class="moon"></div>
     <div class="planet planet-1"></div>
     <div class="planet planet-2"></div>
-    <div class="planet planet-3"></div>
 
     <div class="grid-wrapper">
         <div class="grid-overlay"></div>
@@ -383,7 +327,7 @@
 
     <div class="window">
         <div class="title-bar">
-            <span>Games</span>
+            <span>MadSandGames_Support</span>
             <div class="title-bar-controls">
                 <div class="title-bar-btn"></div>
                 <div class="title-bar-btn"></div>
@@ -397,37 +341,25 @@
                 <a href="games.html">Games</a>
                 <a href="minecraft.html">Minecraft</a>
                 <a href="youtube.html">YouTube</a>
-                <a href="support.html">Support Me!</a>
+                <a href="support.html">Support</a>
             </nav>
 
-            <h1>My Games</h1>
+            <h1>Support My Projects</h1>
+            <p>As an independent game developer, every bit of support helps keep the projects alive. If you enjoy my games, videos, or the Minecraft server, here is how you can help out!</p>
 
-            <img src="WellboundTitle.png" alt="Wellbound Title">
-
-            <h2>WellBound</h2>
-            <p>WellBound is a game with a randomly generated level every time you play it. The player wakes up in a strange grassy world surrounded by wilderness on all sides. The player must learn to survive to escape or solve the final puzzle.</p>
-
-            <h3><span class="highlight">[</span>Development Log<span class="highlight">]</span></h3>
-            <div class="commit-box" id="commit-log">
-                Initializing system... Checking for updates...
+            <div class="support-box">
+                <h3>[ Steam ]</h3>
+                <p>The biggest way to support me right now is by wishlisting or picking up WellBound on Steam! Wishlists help the game get seen by more people.</p>
+                <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">WellBound on Steam</a>
             </div>
 
-            <h3>Gameplay & Features</h3>
-            <ul>
-                <li><strong>World Generation:</strong> Three biomes: desert, swamp, forest, generated with Perlin noise.</li>
-                <li><strong>Difficulty System:</strong> Enemies gain speed, damage, and range over time.</li>
-                <li><strong>Crafting System:</strong> Combine items to create stamina food, effects, or traps.</li>
-                <li><strong>Ritual System:</strong> Complete sacrifice, resource, and sacred item rituals to escape.</li>
-            </ul>
-
-            <img src="TheWellActivated.png" alt="The Well Activated">
-
-            <div class="button-group">
-                <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
+            <div class="support-box">
+                <h3>[ Community ]</h3>
+                <p>Join the Discord to give feedback, chat about game development, or join the Minecraft server. Subscribe to the YouTube channel to keep up with my devlogs.</p>
                 <a href="https://discord.gg/mkCwxn9dcK" target="_blank" class="btn">Join Discord</a>
+                <a href="https://www.youtube.com/@MadSandGames?sub_confirmation=1" target="_blank" class="btn">Sub on YouTube</a>
             </div>
 
-            <a href="index.html" class="back-link">&lt; Back to Home</a>
         </div>
     </div>
 
@@ -437,25 +369,6 @@
     </div>
 
     <script>
-        async function fetchCommits() {
-            const container = document.getElementById('commit-log');
-            try {
-                const response = await fetch('commits.json');
-                if (!response.ok) throw new Error('File not found');
-                const data = await response.json();
-                container.innerHTML = '';
-                data.forEach(commit => {
-                    const entry = document.createElement('div');
-                    entry.className = 'commit-entry';
-                    entry.innerHTML = `<span class="commit-date">[${commit.date}]</span><span class="commit-msg">> ${commit.message}</span>`;
-                    container.appendChild(entry);
-                });
-            } catch (error) {
-                container.innerHTML = 'Error: Cannot sync with private repository.<br><br>Check if "commits.json" has been generated in your root folder.';
-            }
-        }
-        fetchCommits();
-
         const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
         let currentPosition = 0;
         document.addEventListener('keydown', (e) => {
@@ -470,7 +383,6 @@
             }
         });
 
-        // Modal Logic for multiple images
         const modal = document.getElementById("imageModal");
         const modalImg = document.getElementById("modalImg");
         const span = document.getElementsByClassName("close")[0];
