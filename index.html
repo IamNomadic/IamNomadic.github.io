@@ -49,6 +49,52 @@
             mask-image: repeating-linear-gradient(to bottom, black 0px, black 16px, transparent 16px, transparent 20px);
         }
 
+        .planet {
+            position: fixed;
+            border-radius: 50%;
+            z-index: -2;
+        }
+
+        .planet-1 {
+            top: 15%;
+            left: 15%;
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
+            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5), 0 0 20px rgba(0, 242, 254, 0.4);
+        }
+
+        .planet-2 {
+            top: 25%;
+            right: 15%;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
+            box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5);
+            transform-style: preserve-3d;
+        }
+
+        .planet-ring {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 140px;
+            height: 140px;
+            border: 8px solid rgba(0, 255, 255, 0.6);
+            border-radius: 50%;
+            transform: translate(-50%, -50%) rotateX(75deg) rotateY(15deg);
+            box-shadow: 0 0 10px rgba(0, 255, 255, 0.8), inset 0 0 10px rgba(0, 255, 255, 0.8);
+        }
+
+        .planet-3 {
+            top: 40%;
+            left: 35%;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+            box-shadow: inset -5px -5px 10px rgba(0,0,0,0.5);
+        }
+
         .grid-overlay {
             position: fixed;
             top: 51%;
@@ -191,6 +237,11 @@
 
     <div class="sky-texture"></div>
     <div class="moon"></div>
+    <div class="planet planet-1"></div>
+    <div class="planet planet-2">
+        <div class="planet-ring"></div>
+    </div>
+    <div class="planet planet-3"></div>
     <div class="grid-overlay"></div>
 
     <div class="window">
