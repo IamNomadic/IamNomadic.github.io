@@ -84,7 +84,7 @@
             opacity: 0.6;
             z-index: -3;
             pointer-events: none;
-            animation: panStars 100s linear infinite; /* Animates the stars */
+            animation: panStars 100s linear infinite;
         }
 
         .moon {
@@ -115,7 +115,7 @@
             height: 120px;
             background: linear-gradient(135deg, #00f2fe 0%, #4facfe 100%);
             box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5), 0 0 20px rgba(0, 242, 254, 0.4);
-            animation: floatSlow 8s ease-in-out infinite; /* Animates planet 1 */
+            animation: floatSlow 8s ease-in-out infinite;
         }
 
         .planet-2 {
@@ -126,7 +126,7 @@
             background: linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%);
             box-shadow: inset -10px -10px 20px rgba(0,0,0,0.5);
             transform-style: preserve-3d;
-            animation: floatMedium 6s ease-in-out infinite; /* Animates planet 2 */
+            animation: floatMedium 6s ease-in-out infinite;
         }
 
         .planet-ring {
@@ -148,23 +148,36 @@
             height: 40px;
             background: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
             box-shadow: inset -5px -5px 10px rgba(0,0,0,0.5);
-            animation: floatFast 5s ease-in-out infinite 1s; /* Animates planet 3 */
+            animation: floatFast 5s ease-in-out infinite 1s;
+        }
+
+        /* 2D Wrapper to prevent 3D elements from clipping over the window */
+        .grid-wrapper {
+            position: fixed;
+            top: 51%;
+            left: 0;
+            width: 100vw;
+            height: 49vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
         }
 
         .grid-overlay {
-            position: fixed;
-            top: 51%;
+            position: absolute;
+            top: 0;
             left: -50vw;
             width: 200vw;
-            height: 100vh;
+            height: 200vh;
             background-image: linear-gradient(rgba(255, 0, 255, 0.6) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 0, 255, 0.6) 2px, transparent 2px);
             background-size: 50px 50px;
             background-position: center top;
             transform: perspective(400px) rotateX(60deg);
             transform-origin: top center;
-            z-index: -1;
-            pointer-events: none;
-            animation: moveGrid 1.5s linear infinite; /* Animates the grid */
+            animation: moveGrid 4s linear infinite;
+            /* Fades the grid out at the horizon so it doesn't "pop" in */
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%);
         }
 
         .window {
@@ -299,7 +312,10 @@
         <div class="planet-ring"></div>
     </div>
     <div class="planet planet-3"></div>
-    <div class="grid-overlay"></div>
+
+    <div class="grid-wrapper">
+        <div class="grid-overlay"></div>
+    </div>
 
     <div class="window">
         <div class="title-bar">
