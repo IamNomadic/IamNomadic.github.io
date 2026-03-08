@@ -33,11 +33,11 @@
 
         @keyframes moveGrid {
             0% {
-                transform: perspective(400px) rotateX(60deg) translateY(0px);
+                transform: perspective(200px) rotateX(75deg) translateY(0px);
             }
 
             100% {
-                transform: perspective(400px) rotateX(60deg) translateY(50px);
+                transform: perspective(200px) rotateX(75deg) translateY(50px);
             }
         }
 
@@ -160,6 +160,8 @@
             z-index: -1;
             overflow: hidden;
             pointer-events: none;
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%);
         }
 
         .grid-overlay {
@@ -171,11 +173,8 @@
             background-image: linear-gradient(rgba(255, 0, 255, 0.6) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 0, 255, 0.6) 2px, transparent 2px);
             background-size: 50px 50px;
             background-position: center top;
-            transform: perspective(400px) rotateX(60deg);
             transform-origin: top center;
             animation: moveGrid 4s linear infinite;
-            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%);
-            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%);
         }
 
         .window {
@@ -395,7 +394,6 @@
     </div>
 
     <script>
-        // Konami Code Sequence: Up, Up, Down, Down, Left, Right, Left, Right, B, A
         const konamiCode = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
         let currentPosition = 0;
 
@@ -411,7 +409,6 @@
             }
         });
 
-        // Image Modal Logic
         const modal = document.getElementById("imageModal");
         const img = document.getElementById("main-screenshot");
         const modalImg = document.getElementById("modalImg");
