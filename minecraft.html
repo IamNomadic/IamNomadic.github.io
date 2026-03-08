@@ -14,6 +14,7 @@
             margin: 0;
             padding: 20px;
         }
+
         .window {
             max-width: 800px;
             margin: 0 auto;
@@ -24,6 +25,7 @@
             border-bottom: 2px solid #000000;
             padding: 2px;
         }
+
         .title-bar {
             background-color: #000080;
             color: #ffffff;
@@ -33,10 +35,12 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .title-bar-controls {
             display: flex;
             gap: 2px;
         }
+
         .title-bar-btn {
             background: #c0c0c0;
             border-top: 2px solid #ffffff;
@@ -46,9 +50,11 @@
             width: 16px;
             height: 16px;
         }
+
         .content {
             padding: 20px;
         }
+
         nav {
             margin-bottom: 20px;
             border-top: 2px solid #808080;
@@ -57,17 +63,27 @@
             border-bottom: 2px solid #ffffff;
             padding: 10px;
         }
-        nav a {
-            color: #000000;
-            margin-right: 15px;
-            text-decoration: none;
-            font-size: 12px;
+
+            nav a {
+                color: #000000;
+                margin-right: 15px;
+                text-decoration: none;
+                font-size: 12px;
+            }
+
+                nav a:hover {
+                    color: #00ffbb;
+                }
+
+        h1 {
+            font-size: 18px;
+            text-align: center;
         }
-        nav a:hover {
-            color: #00ffbb;
+
+        p, li {
+            font-size: 10px;
         }
-        h1 { font-size: 18px; text-align: center; }
-        p, li { font-size: 10px; }
+
         .server-box {
             background: #f2ed88;
             color: #009e67;
@@ -75,16 +91,20 @@
             margin-top: 20px;
             border: 2px inset #ffffff;
         }
-        .server-box p {
-            margin: 10px 0;
-        }
-        .server-box ul {
-            list-style-type: square;
-            padding-left: 20px;
-        }
+
+            .server-box p {
+                margin: 10px 0;
+            }
+
+            .server-box ul {
+                list-style-type: square;
+                padding-left: 20px;
+            }
+
         .highlight {
             color: #a84032;
         }
+
         .btn {
             display: inline-block;
             background-color: #c0c0c0;
@@ -99,13 +119,28 @@
             font-size: 10px;
             text-align: center;
         }
-        .btn:active {
-            border-top: 2px solid #000000;
-            border-left: 2px solid #000000;
+
+            .btn:active {
+                border-top: 2px solid #000000;
+                border-left: 2px solid #000000;
+                border-right: 2px solid #ffffff;
+                border-bottom: 2px solid #ffffff;
+                background-color: #f2ed88;
+            }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            image-rendering: pixelated;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
             border-right: 2px solid #ffffff;
             border-bottom: 2px solid #ffffff;
-            background-color: #f2ed88;
+            margin: 10px auto;
+            display: block;
+            background-color: #000000;
         }
+
         .button-group {
             text-align: center;
             margin-top: 20px;
@@ -114,50 +149,50 @@
 </head>
 <body>
 
-<div class="window">
-    <div class="title-bar">
-        <span>The_Desert_MC</span>
-        <div class="title-bar-controls">
-            <div class="title-bar-btn"></div>
-            <div class="title-bar-btn"></div>
-            <div class="title-bar-btn"></div>
+    <div class="window">
+        <div class="title-bar">
+            <span>The_Desert_MC</span>
+            <div class="title-bar-controls">
+                <div class="title-bar-btn"></div>
+                <div class="title-bar-btn"></div>
+                <div class="title-bar-btn"></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="games.html">Games</a>
+                <a href="minecraft.html">Minecraft</a>
+                <a href="youtube.html">YouTube</a>
+            </nav>
+
+            <h1>The Desert Minecraft Server</h1>
+            <p>Welcome to The Desert!</p>
+
+            <div class="server-box">
+                <p>> <span class="highlight">Server IP:</span> play.thedesert.ca</p>
+                <p>> <span class="highlight">Status:</span> Whitelist Only</p>
+                <br>
+                <p>> <span class="highlight">How to join:</span></p>
+                <p>> 1. You must join the Discord.</p>
+                <p>> 2. Send !whitelist <span class="highlight">{</span>Username<span class="highlight">}</span> in #whitelist-apply</p>
+                <br>
+                <p>> <span class="highlight">Current Gamemodes:</span></p>
+                <ul>
+                    <li>Survival</li>
+                    <li>Parkour</li>
+                    <li>SkyBlock <span class="highlight">&lt;--</span> Ask for your own world in #skyblock-application</li>
+                </ul>
+                <br>
+                <p>> Always taking suggestions!</p>
+            </div>
+
+            <div class="button-group">
+                <a href="https://discord.gg/mkCwxn9dcK" target="_blank" class="btn">Join Discord to Whitelist</a>
+            </div>
         </div>
     </div>
-
-    <div class="content">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="games.html">Games</a>
-            <a href="minecraft.html">Minecraft</a>
-            <a href="youtube.html">YouTube</a>
-        </nav>
-
-        <h1>The Desert Minecraft Server</h1>
-        <p>Welcome to The Desert!</p>
-
-        <div class="server-box">
-            <p>> <span class="highlight">Server IP:</span> play.thedesert.ca</p>
-            <p>> <span class="highlight">Status:</span> Whitelist Only</p>
-            <br>
-            <p>> <span class="highlight">How to join:</span></p>
-            <p>> 1. You must join the Discord.</p>
-            <p>> 2. Send !whitelist <span class="highlight">{</span>Username<span class="highlight">}</span> in #whitelist-apply</p>
-            <br>
-            <p>> <span class="highlight">Current Gamemodes:</span></p>
-            <ul>
-                <li>Survival</li>
-                <li>Parkour</li>
-                <li>SkyBlock <span class="highlight">&lt;--</span> Ask for your own world in #skyblock-application</li>
-            </ul>
-            <br>
-            <p>> Always taking suggestions!</p>
-        </div>
-
-        <div class="button-group">
-            <a href="https://discord.gg/mkCwxn9dcK" target="_blank" class="btn">Join Discord to Whitelist</a>
-        </div>
-    </div>
-</div>
 
 </body>
 </html>

@@ -14,6 +14,7 @@
             margin: 0;
             padding: 20px;
         }
+
         .window {
             max-width: 800px;
             margin: 0 auto;
@@ -24,6 +25,7 @@
             border-bottom: 2px solid #000000;
             padding: 2px;
         }
+
         .title-bar {
             background-color: #000080;
             color: #ffffff;
@@ -33,10 +35,12 @@
             justify-content: space-between;
             align-items: center;
         }
+
         .title-bar-controls {
             display: flex;
             gap: 2px;
         }
+
         .title-bar-btn {
             background: #c0c0c0;
             border-top: 2px solid #ffffff;
@@ -46,9 +50,11 @@
             width: 16px;
             height: 16px;
         }
+
         .content {
             padding: 20px;
         }
+
         nav {
             margin-bottom: 20px;
             border-top: 2px solid #808080;
@@ -57,21 +63,42 @@
             border-bottom: 2px solid #ffffff;
             padding: 10px;
         }
-        nav a {
-            color: #000000;
-            margin-right: 15px;
-            text-decoration: none;
+
+            nav a {
+                color: #000000;
+                margin-right: 15px;
+                text-decoration: none;
+                font-size: 12px;
+            }
+
+                nav a:hover {
+                    color: #00ffbb;
+                }
+
+        h1 {
+            font-size: 18px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 14px;
+            margin-top: 30px;
+        }
+
+        h3 {
             font-size: 12px;
+            margin-top: 20px;
         }
-        nav a:hover {
-            color: #00ffbb;
+
+        p, li {
+            font-size: 10px;
         }
-        h1 { font-size: 18px; text-align: center; }
-        h2 { font-size: 14px; margin-top: 30px; }
-        h3 { font-size: 12px; margin-top: 20px; }
-        p, li { font-size: 10px; }
-        ul { list-style-type: square; padding-left: 20px; }
-        
+
+        ul {
+            list-style-type: square;
+            padding-left: 20px;
+        }
+
         /* Commit Log Styling */
         .commit-box {
             background: #f2ed88;
@@ -82,13 +109,23 @@
             max-height: 250px;
             overflow-y: auto;
         }
+
         .commit-entry {
             margin-bottom: 10px;
             border-bottom: 1px dashed #a84032;
             padding-bottom: 5px;
         }
-        .commit-date { color: #a84032; font-size: 8px; }
-        .commit-msg { display: block; margin-top: 4px; font-size: 9px; }
+
+        .commit-date {
+            color: #a84032;
+            font-size: 8px;
+        }
+
+        .commit-msg {
+            display: block;
+            margin-top: 4px;
+            font-size: 9px;
+        }
 
         .btn {
             display: inline-block;
@@ -103,13 +140,15 @@
             font-size: 10px;
             text-align: center;
         }
-        .btn:active {
-            border-top: 2px solid #000000;
-            border-left: 2px solid #000000;
-            border-right: 2px solid #ffffff;
-            border-bottom: 2px solid #ffffff;
-            background-color: #f2ed88;
-        }
+
+            .btn:active {
+                border-top: 2px solid #000000;
+                border-left: 2px solid #000000;
+                border-right: 2px solid #ffffff;
+                border-bottom: 2px solid #ffffff;
+                background-color: #f2ed88;
+            }
+
         img {
             max-width: 100%;
             height: auto;
@@ -120,14 +159,18 @@
             border-bottom: 2px solid #ffffff;
             margin: 15px auto;
             display: block;
+            background-color: #000000;
         }
+
         .button-group {
             text-align: center;
             margin-top: 20px;
         }
-        .button-group .btn {
-            margin: 0 5px;
-        }
+
+            .button-group .btn {
+                margin: 0 5px;
+            }
+
         a.back-link {
             color: #000080;
             text-decoration: none;
@@ -135,10 +178,12 @@
             margin-top: 20px;
             font-size: 10px;
         }
-        a.back-link:hover {
-            background-color: #00ffbb;
-            color: #000;
-        }
+
+            a.back-link:hover {
+                background-color: #00ffbb;
+                color: #000;
+            }
+
         .highlight {
             color: #a84032;
         }
@@ -146,87 +191,87 @@
 </head>
 <body>
 
-<div class="window">
-    <div class="title-bar">
-        <span>Games</span>
-        <div class="title-bar-controls">
-            <div class="title-bar-btn"></div>
-            <div class="title-bar-btn"></div>
-            <div class="title-bar-btn"></div>
+    <div class="window">
+        <div class="title-bar">
+            <span>Games</span>
+            <div class="title-bar-controls">
+                <div class="title-bar-btn"></div>
+                <div class="title-bar-btn"></div>
+                <div class="title-bar-btn"></div>
+            </div>
+        </div>
+
+        <div class="content">
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="games.html">Games</a>
+                <a href="minecraft.html">Minecraft</a>
+                <a href="youtube.html">YouTube</a>
+            </nav>
+
+            <h1>My Games</h1>
+
+            <img src="WellboundTitle.png" alt="Wellbound Title">
+
+            <h2>WellBound</h2>
+            <p>WellBound is a game with a randomly generated level every time you play it. The player wakes up in a strange grassy world surrounded by wilderness on all sides. The player must learn to survive to escape or solve the final puzzle.</p>
+
+            <h3><span class="highlight">[</span>Development Log<span class="highlight">]</span></h3>
+            <div class="commit-box" id="commit-log">
+                Initializing system... Checking for updates...
+            </div>
+
+            <h3>Gameplay & Features</h3>
+            <ul>
+                <li><strong>World Generation:</strong> Three biomes: desert, swamp, forest, generated with Perlin noise.</li>
+                <li><strong>Difficulty System:</strong> Enemies gain speed, damage, and range over time.</li>
+                <li><strong>Crafting System:</strong> Combine items to create stamina food, effects, or traps.</li>
+                <li><strong>Ritual System:</strong> Complete sacrifice, resource, and sacred item rituals to escape.</li>
+            </ul>
+
+            <img src="TheWellActivated.png" alt="The Well Activated">
+
+            <div class="button-group">
+                <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
+                <a href="https://discord.gg/mkCwxn9dcK" target="_blank" class="btn">Join Discord</a>
+            </div>
+
+            <a href="index.html" class="back-link">&lt; Back to Home</a>
         </div>
     </div>
 
-    <div class="content">
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="games.html">Games</a>
-            <a href="minecraft.html">Minecraft</a>
-            <a href="youtube.html">YouTube</a>
-        </nav>
+    <script>
+        async function fetchCommits() {
+            const container = document.getElementById('commit-log');
 
-        <h1>My Games</h1>
-        
-        <img src="WellboundTitle.png" alt="Wellbound Title">
-        
-        <h2>WellBound</h2>
-        <p>WellBound is a game with a randomly generated level every time you play it. The player wakes up in a strange grassy world surrounded by wilderness on all sides. The player must learn to survive to escape or solve the final puzzle.</p>
-        
-        <h3><span class="highlight">[</span>Development Log<span class="highlight">]</span></h3>
-        <div class="commit-box" id="commit-log">
-            Initializing system... Checking for updates...
-        </div>
+            try {
+                // Fetch the commits.json file created by your GitHub Action
+                const response = await fetch('commits.json');
 
-        <h3>Gameplay & Features</h3>
-        <ul>
-            <li><strong>World Generation:</strong> Three biomes: desert, swamp, forest, generated with Perlin noise.</li>
-            <li><strong>Difficulty System:</strong> Enemies gain speed, damage, and range over time.</li>
-            <li><strong>Crafting System:</strong> Combine items to create stamina food, effects, or traps.</li>
-            <li><strong>Ritual System:</strong> Complete sacrifice, resource, and sacred item rituals to escape.</li>
-        </ul>
-        
-        <img src="TheWellActivated.png" alt="The Well Activated">
+                if (!response.ok) {
+                    throw new Error('File not found');
+                }
 
-        <div class="button-group">
-            <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
-            <a href="https://discord.gg/mkCwxn9dcK" target="_blank" class="btn">Join Discord</a>
-        </div>
+                const data = await response.json();
 
-        <a href="index.html" class="back-link">&lt; Back to Home</a>
-    </div>
-</div>
+                container.innerHTML = ''; // Clear status message
 
-<script>
-    async function fetchCommits() {
-        const container = document.getElementById('commit-log');
-
-        try {
-            // Fetch the commits.json file created by your GitHub Action
-            const response = await fetch('commits.json');
-            
-            if (!response.ok) {
-                throw new Error('File not found');
+                data.forEach(commit => {
+                    const entry = document.createElement('div');
+                    entry.className = 'commit-entry';
+                    entry.innerHTML = `
+                        <span class="commit-date">[${commit.date}]</span>
+                        <span class="commit-msg">> ${commit.message}</span>
+                    `;
+                    container.appendChild(entry);
+                });
+            } catch (error) {
+                container.innerHTML = 'Error: Cannot sync with private repository.<br><br>Check if "commits.json" has been generated in your root folder.';
             }
-            
-            const data = await response.json();
-
-            container.innerHTML = ''; // Clear status message
-
-            data.forEach(commit => {
-                const entry = document.createElement('div');
-                entry.className = 'commit-entry';
-                entry.innerHTML = `
-                    <span class="commit-date">[${commit.date}]</span>
-                    <span class="commit-msg">> ${commit.message}</span>
-                `;
-                container.appendChild(entry);
-            });
-        } catch (error) {
-            container.innerHTML = 'Error: Cannot sync with private repository.<br><br>Check if "commits.json" has been generated in your root folder.';
         }
-    }
 
-    fetchCommits();
-</script>
+        fetchCommits();
+    </script>
 
 </body>
 </html>
