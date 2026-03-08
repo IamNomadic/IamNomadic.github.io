@@ -20,7 +20,6 @@
             overflow-x: hidden;
         }
 
-        /* --- ANIMATIONS --- */
         @keyframes panStars {
             from {
                 background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
@@ -70,7 +69,6 @@
                 transform: translateY(-20px);
             }
         }
-        /* ------------------ */
 
         .sky-texture {
             position: fixed;
@@ -84,7 +82,7 @@
             opacity: 0.6;
             z-index: -3;
             pointer-events: none;
-            animation: panStars 100s linear infinite;
+            animation: panStars 100s linear infinite; /* Standard pan */
         }
 
         .moon {
@@ -284,10 +282,6 @@
             background-color: #000000;
         }
 
-        #main-screenshot {
-            cursor: pointer;
-        }
-
         .footer-text {
             text-align: center;
             margin-top: 20px;
@@ -375,7 +369,7 @@
 
             <h2>Latest Project: WellBound</h2>
 
-            <img id="main-screenshot" src="Screenshot.PNG" alt="Game Screenshot">
+            <img src="Screenshot.PNG" alt="Game Screenshot">
 
             <div class="button-group">
                 <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
@@ -410,23 +404,21 @@
         });
 
         const modal = document.getElementById("imageModal");
-        const img = document.getElementById("main-screenshot");
         const modalImg = document.getElementById("modalImg");
         const span = document.getElementsByClassName("close")[0];
+        const contentImages = document.querySelectorAll(".content img");
 
-        img.onclick = function () {
-            modal.style.display = "block";
-            modalImg.src = this.src;
-        }
+        if (modal && contentImages.length > 0) {
+            contentImages.forEach(img => {
+                img.style.cursor = "pointer";
+                img.onclick = function () {
+                    modal.style.display = "block";
+                    modalImg.src = this.src;
+                }
+            });
 
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        modal.onclick = function (e) {
-            if (e.target !== modalImg) {
-                modal.style.display = "none";
-            }
+            span.onclick = function () { modal.style.display = "none"; }
+            modal.onclick = function (e) { if (e.target !== modalImg) modal.style.display = "none"; }
         }
     </script>
 
