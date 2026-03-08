@@ -26,9 +26,9 @@
             left: 0;
             width: 100vw;
             height: 51%;
-            background-image: radial-gradient(circle, white 2px, transparent 2px), radial-gradient(circle, white 1px, transparent 1px), radial-gradient(circle, white 1.5px, transparent 1.5px);
-            background-size: 550px 550px, 350px 350px, 250px 250px;
-            background-position: 0 0, 40px 60px, 130px 270px;
+            background-image: radial-gradient(circle, white 2px, transparent 2px), radial-gradient(circle, white 1px, transparent 1px), radial-gradient(circle, white 1.5px, transparent 1.5px), radial-gradient(circle, white 1px, transparent 1px);
+            background-size: 400px 400px, 200px 200px, 300px 300px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
             opacity: 0.6;
             z-index: -3;
             pointer-events: none;
@@ -238,17 +238,14 @@
         let currentPosition = 0;
 
         document.addEventListener('keydown', (e) => {
-            // Check if the key matches the current position in the sequence
             if (e.key === konamiCode[currentPosition]) {
                 currentPosition++;
-
-                // If the full code is entered
                 if (currentPosition === konamiCode.length) {
                     window.location.href = 'secret.html';
-                    currentPosition = 0; // Reset
+                    currentPosition = 0;
                 }
             } else {
-                currentPosition = 0; // Reset if a wrong key is pressed
+                currentPosition = 0;
             }
         });
     </script>

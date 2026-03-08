@@ -15,9 +15,58 @@
             margin: 0;
             padding: 20px;
             min-height: 100vh;
+            position: relative;
+            z-index: 0;
+            overflow-x: hidden;
+        }
+
+        .sky-texture {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 51%;
+            background-image: radial-gradient(circle, white 2px, transparent 2px), radial-gradient(circle, white 1px, transparent 1px), radial-gradient(circle, white 1.5px, transparent 1.5px), radial-gradient(circle, white 1px, transparent 1px);
+            background-size: 400px 400px, 200px 200px, 300px 300px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            opacity: 0.6;
+            z-index: -3;
+            pointer-events: none;
+        }
+
+        .moon {
+            position: fixed;
+            top: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            background: linear-gradient(to bottom, #ffeb3b 0%, #ff0066 100%);
+            box-shadow: 0 0 50px #ff0066;
+            z-index: -2;
+            -webkit-mask-image: repeating-linear-gradient(to bottom, black 0px, black 16px, transparent 16px, transparent 20px);
+            mask-image: repeating-linear-gradient(to bottom, black 0px, black 16px, transparent 16px, transparent 20px);
+        }
+
+        .grid-overlay {
+            position: fixed;
+            top: 51%;
+            left: -50vw;
+            width: 200vw;
+            height: 100vh;
+            background-image: linear-gradient(rgba(255, 0, 255, 0.6) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 0, 255, 0.6) 2px, transparent 2px);
+            background-size: 50px 50px;
+            background-position: center top;
+            transform: perspective(400px) rotateX(60deg);
+            transform-origin: top center;
+            z-index: -1;
+            pointer-events: none;
         }
 
         .window {
+            position: relative;
+            z-index: 1;
             max-width: 800px;
             margin: 0 auto;
             background-color: #c0c0c0;
@@ -89,7 +138,7 @@
 
         .video-box {
             background: #008080;
-            color: #e6ccff; /* Light Lavender/Purple */
+            color: #e6ccff;
             padding: 15px;
             margin-top: 20px;
             border: 2px inset #ffffff;
@@ -114,7 +163,7 @@
             }
 
         .highlight {
-            color: #00ffff;
+            color: #000000;
         }
 
         .button-group {
@@ -162,6 +211,10 @@
 </head>
 <body>
 
+    <div class="sky-texture"></div>
+    <div class="moon"></div>
+    <div class="grid-overlay"></div>
+
     <div class="window">
         <div class="title-bar">
             <span>MadSandGames_YouTube</span>
@@ -196,7 +249,7 @@
 
             <div class="button-group">
                 <a href="https://www.youtube.com/@MadSandGames" target="_blank" class="btn">Visit Channel</a>
-                <a href="https://www.youtube.com/@MadSandGames?sub_confirmation=1" target="_blank" class="btn" style="color: #00ffff;">Subscribe</a>
+                <a href="https://www.youtube.com/@MadSandGames?sub_confirmation=1" target="_blank" class="btn" style="color: #000000;">Subscribe</a>
             </div>
         </div>
     </div>
