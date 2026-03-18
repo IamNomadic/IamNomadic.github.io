@@ -122,7 +122,8 @@
         h1, h2 { font-size: 16px; margin-top: 0; }
         p { font-size: 10px; }
         
-        .link-text { display: block; font-size: 10px; color: #0000ee; margin-bottom: 10px; word-wrap: break-word; }
+        .role-text { font-size: 10px; color: #ff0066; margin-bottom: 10px; text-transform: uppercase; }
+        .link-text { display: block; font-size: 8px; color: #0000ee; margin-bottom: 10px; word-wrap: break-word; }
 
         .btn {
             display: inline-block; background-color: #c0c0c0; color: #000000;
@@ -134,15 +135,16 @@
             border-top: 2px solid #000000; border-left: 2px solid #000000; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff; background-color: #f2ed88;
         }
 
-        .footer-text { text-align: center; margin-top: 20px; font-size: 8px; }
+        .friends-container { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
         
-        .friend-block { border-bottom: 2px dashed #808080; padding-bottom: 10px; margin-bottom: 20px; display: flex; flex-direction: column; align-items: center; }
-        .friend-block:last-child { border-bottom: none; }
+        .friend-block { border: 2px dashed #808080; padding: 15px; display: flex; flex-direction: column; align-items: center; text-align: center; }
 
         .friend-img {
             width: 80px; height: 80px; object-fit: cover; margin-bottom: 15px;
             border-top: 2px solid #808080; border-left: 2px solid #808080; border-right: 2px solid #ffffff; border-bottom: 2px solid #ffffff;
         }
+
+        .footer-text { text-align: center; margin-top: 20px; font-size: 8px; }
     </style>
 </head>
 <body>
@@ -176,34 +178,42 @@
                 <h1>Friends & Supporters</h1>
             </div>
 
-            <div class="friend-block">
-                <img src="seanlynchpf.jpg" alt="sean lynch" class="friend-img">
-                <h2>sean lynch</h2>
-                <a href="https://www.linkedin.com/in/seanzolynch/" target="_blank" class="link-text">https://www.linkedin.com/in/seanzolynch/</a>
-                <a href="https://www.linkedin.com/in/seanzolynch/" target="_blank" class="btn">Connect</a>
-            </div>
+            <div class="friends-container">
+                <div class="friend-block">
+                    <img src="seanlynchpf.jpg" alt="sean lynch" class="friend-img">
+                    <h2>sean lynch</h2>
+                    <div class="role-text">Teacher - Special Thanks!</div>
+                    <a href="https://www.linkedin.com/in/seanzolynch/" target="_blank" class="link-text">https://www.linkedin.com/in/seanzolynch/</a>
+                    <a href="https://www.linkedin.com/in/seanzolynch/" target="_blank" class="btn">Connect</a>
+                </div>
 
-            <div class="friend-block">
-                <img src="funkaspf.jpg" alt="noah - funkas" class="friend-img">
-                <h2>noah - funkas</h2>
-                <a href="https://www.twitch.tv/funkas_" target="_blank" class="link-text">https://www.twitch.tv/funkas_</a>
-                <a href="https://www.youtube.com/@Funkas" target="_blank" class="link-text">https://www.youtube.com/@Funkas</a>
-                <a href="https://www.twitch.tv/funkas_" target="_blank" class="btn">Follow</a>
-                <a href="https://www.youtube.com/@Funkas" target="_blank" class="btn">Subscribe</a>
-            </div>
+                <div class="friend-block">
+                    <img src="funkaspf.jpg" alt="noah - funkas" class="friend-img">
+                    <h2>noah - funkas</h2>
+                    <div class="role-text">Friend</div>
+                    <a href="https://www.twitch.tv/funkas_" target="_blank" class="link-text">https://www.twitch.tv/funkas_</a>
+                    <a href="https://www.youtube.com/@Funkas" target="_blank" class="link-text">https://www.youtube.com/@Funkas</a>
+                    <div>
+                        <a href="https://www.twitch.tv/funkas_" target="_blank" class="btn">Follow</a>
+                        <a href="https://www.youtube.com/@Funkas" target="_blank" class="btn">Subscribe</a>
+                    </div>
+                </div>
 
-            <div class="friend-block">
-                <img src="breadheadpf.jpg" alt="BreadHeadST" class="friend-img">
-                <h2>BreadHeadST</h2>
-                <a href="https://www.youtube.com/@BreadHeadST" target="_blank" class="link-text">https://www.youtube.com/@BreadHeadST</a>
-                <a href="https://www.youtube.com/@BreadHeadST" target="_blank" class="btn">Subscribe</a>
-            </div>
+                <div class="friend-block">
+                    <img src="breadheadpf.jpg" alt="BreadHeadST" class="friend-img">
+                    <h2>BreadHeadST</h2>
+                    <div class="role-text">Friend</div>
+                    <a href="https://www.youtube.com/@BreadHeadST" target="_blank" class="link-text">https://www.youtube.com/@BreadHeadST</a>
+                    <a href="https://www.youtube.com/@BreadHeadST" target="_blank" class="btn">Subscribe</a>
+                </div>
 
-            <div class="friend-block">
-                <img src="cintechpf.jpg" alt="Cintech" class="friend-img">
-                <h2>Cintech</h2>
-                <a href="https://www.youtube.com/@cintechstudios" target="_blank" class="link-text">https://www.youtube.com/@cintechstudios</a>
-                <a href="https://www.youtube.com/@cintechstudios" target="_blank" class="btn">Subscribe</a>
+                <div class="friend-block">
+                    <img src="cintechpf.jpg" alt="Cintech" class="friend-img">
+                    <h2>Cintech</h2>
+                    <div class="role-text">Friend</div>
+                    <a href="https://www.youtube.com/@cintechstudios" target="_blank" class="link-text">https://www.youtube.com/@cintechstudios</a>
+                    <a href="https://www.youtube.com/@cintechstudios" target="_blank" class="btn">Subscribe</a>
+                </div>
             </div>
 
             <div class="footer-text">
