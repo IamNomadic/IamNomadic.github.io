@@ -342,6 +342,38 @@
             font-weight: bold;
             cursor: pointer;
         }
+        @media (max-width: 768px) {
+            .window {
+                width: 100%;
+                box-sizing: border-box;
+                margin: 0;
+            }
+            .content {
+                padding: 10px;
+            }
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+                justify-content: center;
+            }
+            nav a {
+                margin-right: 0;
+                font-size: 10px;
+            }
+            h1, h2 {
+                font-size: 12px;
+            }
+            p, .btn, .role-text {
+                font-size: 8px;
+            }
+            .link-text {
+                font-size: 6px;
+            }
+            .friends-container {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
