@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MadSandGames | Playing WellBound</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Press Start 2P', cursive;
+            background: linear-gradient(to bottom, #120024 0%, #4a0063 35%, #ff0066 50%, #00ffff 50.5%, #000000 51%, #120024 100%);
+            background-attachment: fixed;
+            color: #000000;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            position: relative;
+            z-index: 0;
+            overflow: hidden; /* Stops page from scrolling while playing */
+        }
+
+        /* Background Starfield and Grid (Same as main site) */
+        @keyframes panStars {
+            from {
+                background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            }
+
+            to {
+                background-position: 400px 0, 240px 60px, 430px 270px, 220px 100px;
+            }
+        }
+
+        @keyframes moveGrid {
+            0% {
+                transform: perspective(200px) rotateX(75deg) translateY(0px);
+            }
+
+            100% {
+                transform: perspective(200px) rotateX(75deg) translateY(50px);
+            }
+        }
+
+        .sky-texture {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 51%;
+            background-image: radial-gradient(circle, white 2px, transparent 2px), radial-gradient(circle, white 1px, transparent 1px), radial-gradient(circle, white 1.5px, transparent 1.5px), radial-gradient(circle, white 1px, transparent 1px);
+            background-size: 400px 400px, 200px 200px, 300px 300px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+            opacity: 0.6;
+            z-index: -3;
+            pointer-events: none;
+            animation: panStars 120s linear infinite;
+        }
+
+        .grid-wrapper {
+            position: fixed;
+            top: 51%;
+            left: 0;
+            width: 100vw;
+            height: 49vh;
+            z-index: -1;
+            overflow: hidden;
+            pointer-events: none;
+            -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%);
+            mask-image: linear-gradient(to bottom, transparent 0%, black 20%, black 100%);
+        }
+
+        .grid-overlay {
+            position: absolute;
+            top: 0;
+            left: -50vw;
+            width: 200vw;
+            height: 200vh;
+            background-image: linear-gradient(rgba(255, 0, 255, 0.6) 2px, transparent 2px), linear-gradient(90deg, rgba(255, 0, 255, 0.6) 2px, transparent 2px);
+            background-size: 50px 50px;
+            background-position: center top;
+            transform-origin: top center;
+            animation: moveGrid 4s linear infinite;
+        }
+
+        /* Maximized Retro Window for Gameplay */
+        .fullscreen-window {
+            position: fixed;
+            top: 2vh;
+            left: 2vw;
+            width: 96vw;
+            height: 96vh;
+            background-color: #c0c0c0;
+            border-top: 2px solid #ffffff;
+            border-left: 2px solid #ffffff;
+            border-right: 2px solid #000000;
+            border-bottom: 2px solid #000000;
+            padding: 2px;
+            display: flex;
+            flex-direction: column;
+            box-sizing: border-box;
+            z-index: 10;
+        }
+
+        .title-bar {
+            background-color: #000080;
+            color: #ffffff;
+            padding: 5px 10px;
+            font-size: 14px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+            .title-bar a {
+                color: #c0c0c0;
+                text-decoration: none;
+                font-size: 12px;
+                border-top: 2px solid #ffffff;
+                border-left: 2px solid #ffffff;
+                border-right: 2px solid #000000;
+                border-bottom: 2px solid #000000;
+                padding: 2px 6px;
+                background: #c0c0c0;
+                color: black;
+            }
+
+                .title-bar a:active {
+                    border-top: 2px solid #000000;
+                    border-left: 2px solid #000000;
+                    border-right: 2px solid #ffffff;
+                    border-bottom: 2px solid #ffffff;
+                }
+
+        .game-container {
+            flex-grow: 1;
+            margin-top: 2px;
+            background: #000000;
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+        }
+
+        /* Fits the iframe to the container */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Aesthetics -->
+    <div class="sky-texture"></div>
+    <div class="grid-wrapper">
+        <div class="grid-overlay"></div>
+    </div>
+
+    <!-- Fullscreen Game Container -->
+    <div class="fullscreen-window">
+        <div class="title-bar">
+            <span>WellBound (WebGL)</span>
+            <a href="games.html">X Close</a>
+        </div>
+
+        <div class="game-container">
+            <!-- Ensure your Unity folder is still named wellbound-web -->
+            <iframe src="wellbound-web/index.html"
+                    scrolling="no"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+
+</body>
+</html>
