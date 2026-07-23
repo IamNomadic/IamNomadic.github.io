@@ -311,6 +311,20 @@
             background-color: #000000;
         }
 
+        /* Unity WebGL Frame Styling */
+        .unity-game-frame {
+            max-width: 100%;
+            width: 640px; /* Update this if your game resolution is different */
+            height: 360px; /* Update this if your game resolution is different */
+            border-top: 2px solid #808080;
+            border-left: 2px solid #808080;
+            border-right: 2px solid #ffffff;
+            border-bottom: 2px solid #ffffff;
+            margin: 20px auto;
+            display: block;
+            background-color: #000000;
+        }
+
         .button-group {
             text-align: center;
             margin-top: 20px;
@@ -421,6 +435,17 @@
             </ul>
 
             <img src="TheWellActivated.png" alt="The Well Activated">
+
+            <!-- Unity WebGL Game Iframe Start -->
+            <h3 style="text-align: center;">Play WellBound (Browser Version)</h3>
+            <iframe class="unity-game-frame"
+                    src="wellbound-web/index.html"
+                    scrolling="no"
+                    frameborder="0"
+                    allow="autoplay; fullscreen"
+                    allowfullscreen>
+            </iframe>
+            <!-- Unity WebGL Game Iframe End -->
 
             <div class="button-group">
                 <a href="https://store.steampowered.com/app/4292280/WellBound/" target="_blank" class="btn">View on Steam</a>
